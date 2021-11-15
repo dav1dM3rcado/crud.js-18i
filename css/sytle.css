@@ -1,0 +1,24 @@
+.card-gal img {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover !important
+  ;
+  height: 15rem;
+}
+
+.card-gal {
+  cursor: default;
+  transition: all 400ms ease;
+  overflow: hidden;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-gal:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3%);
+}
+.objFit {
+  object-fit: cover;
+  width: 100% !important;
+  height: 100%;
+}
