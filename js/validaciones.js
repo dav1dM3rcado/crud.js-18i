@@ -1,6 +1,4 @@
-import { campoRequerido } from "./validaciones.js";
-
-function campoRequerido(input) {
+export function campoRequerido(input) {
   if (input.value.trim().length > 0) {
     //    console.log('paso la validacion')
     input.className = "form-control is-valid";
@@ -12,7 +10,7 @@ function campoRequerido(input) {
   }
 }
 
-function validarNumeros(input) {
+export function validarNumeros(input) {
   // crear una expresion regular
   let patron = /^[0-9]{1,3}$/;
   // probar el funcionamiento del patron o expresion regular
@@ -27,7 +25,7 @@ function validarNumeros(input) {
   }
 }
 
-function validarURL(input) {
+export function validarURL(input) {
   // crear la expresion regular
   let patron = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/;
   if (patron.test(input.value)) {
@@ -39,7 +37,7 @@ function validarURL(input) {
   }
 }
 
-function validarGeneral(e) {
+export function validarGeneral(e) {
   e.preventDefault();
   // console.log('aqui tengo que validar todo de nuevo');
   // volver a validar todos los campos
@@ -59,28 +57,3 @@ function validarGeneral(e) {
     alerta.className = "alert alert-danger my-5";
   }
 }
-
-// agregar eventos a los elementos del formulario
-let campoCodigo = document.querySelector("#codigo");
-let campoProducto = document.querySelector("#producto");
-let campoDescripcion = document.querySelector("#descripcion");
-let campoCantidad = document.querySelector("#cantidad");
-let campoURL = document.querySelector("#url");
-let formularioProducto = document.querySelector("#formProducto");
-
-campoCodigo.addEventListener("blur", () => {
-  campoRequerido(campoCodigo);
-});
-campoProducto.addEventListener("blur", () => {
-  campoRequerido(campoProducto);
-});
-campoDescripcion.addEventListener("blur", () => {
-  campoRequerido(campoDescripcion);
-});
-campoCantidad.addEventListener("blur", () => {
-  validarNumeros(campoCantidad);
-});
-campoURL.addEventListener("blur", () => {
-  validarURL(campoURL);
-});
-formularioProducto.addEventListener("submit", validarGeneral);
